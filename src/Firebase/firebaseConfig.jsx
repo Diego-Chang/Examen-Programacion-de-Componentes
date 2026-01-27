@@ -5,12 +5,12 @@ import 'firebase/compat/auth'
 
 //Firebase configuration.
 const firebaseConfig = {
-  apiKey: "AIzaSyD8Li5CemJ6M77GbOGIenX-BYQs8xr_oOE",
-  authDomain: "examen-program-componentes.firebaseapp.com",
-  projectId: "examen-program-componentes",
-  storageBucket: "examen-program-componentes.firebasestorage.app",
-  messagingSenderId: "918938074070",
-  appId: "1:918938074070:web:118c665b18a573e8784277"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 
 //Firebase Database and Auth initialization and export.
