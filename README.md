@@ -14,7 +14,7 @@ Este proyecto consiste en una aplicación que simula una tienda online donde el 
 # App Setup.
 
 - Descarga del proyecto o copia de repositorio.
-- Instalación de dependencias en la carpeta del proyecto mediante "npm install" en terminal.
+- Instalación de dependencias en la carpeta del proyecto mediante "npm install --force" en terminal.
 
 # Firebase Setup.
 
