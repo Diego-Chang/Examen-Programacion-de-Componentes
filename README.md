@@ -14,7 +14,7 @@ Este proyecto consiste en una aplicación que simula una tienda online donde el 
 # App Setup.
 
 - Descarga del proyecto o copia de repositorio.
-- Instalación de dependencias en la carpeta del proyecto mediante "npm install --force" en terminal (--force para poder instalar la dependencia CurrencyFormat).
+- Instalación de dependencias en la carpeta del proyecto mediante `npm install --force` en terminal (--force para poder instalar la dependencia CurrencyFormat).
 
 # Firebase Setup.
 
@@ -22,29 +22,49 @@ Este proyecto consiste en una aplicación que simula una tienda online donde el 
 - Crear un proyecto.
 - Habilitar el uso de Firestore Database y Authentification.
 - Como proveedor de Authentification usar Email/Password.
+  
+  (Ignorar el siguiente paso si se pretende desplegar la aplicación en Netlify).
+
 - Dentro de la configuración General del proyecto de Firebase Console, añadir una aplicación web y copiar y pegar las credenciales entregadas en los campos especificos en firebaseConfig.jsx, en la ruta <proyecto>/src/Firebase/ del proyecto.
 
 # Uso.
 
-1.- Webapp (Desarrollador).
+## 1.- Webapp (Desarrollador).
 
 - Correr "npm run dev" para inicio de aplicación en navegador como desarrollador.
 - Abrir navegador en la URL indicada en el terminal.
 
-2.- Aplicación movil Android.
+## 2.- Aplicación movil Android.
 
-- Correr comando "npm run build" en el proyecto.
-- Creación de carpeta "cordova" dentro del proyecto.
-- Dentro de esta carpeta correr el comando "cordova create ."
-- En la misma carpeta, correr el comando "cordova platform add Android"
+- Correr comando `npm run build` en el proyecto.
+- Crear carpeta "cordova" dentro del proyecto.
+- Dentro de esta carpeta correr el comando `cordova create .`
+- En la misma carpeta, correr el comando `cordova platform add Android`
 - Copiar los contenidos de la carpeta creada mediante "npm run build" en el primer paso de esta sección (Carpeta "dist" en este caso) dentro de la carpeta "www" dentro de cordova.
-- Por ultimo, correr el comando "cordova build Android"
+- Por ultimo, correr el comando `cordova build Android`
 
 Estos pasos crearan una APK de pruebas en la ruta "<proyecto>/cordova/platform/android/app/build/outputs/apk/debug/" con el nombre "app-debug.apk" para su uso, ya sea mediante USB debugging o emulador.
 
-Notas: 
+### Notas: 
 - Se requiere un JDK mayor o igual a la version 11 instalada en el sistema.
-- Se recomienda correr "cordova platform rm Android" antes de "cordova platform add Android" por si se dan problemas con este paso.
+- Se recomienda correr `cordova platform rm Android` antes de `cordova platform add Android` por si se dan problemas con este paso.
+
+## 3.- Webapp en Netlify.
+
+- Desplegar el proyecto en Netlify.
+- En comparación a los otros 2 metodos que requieren copiar y pegar las credenciales en firebaseConfig.jsx, con Netlify usaremos un archivo .env con la siguiente estructura:
+
+  VITE_FIREBASE_API_KEY=tu_api_key\
+  VITE_FIREBASE_AUTH_DOMAIN=tu_auth_domain\
+  VITE_FIREBASE_PROJECT_ID=tu_project_id\
+  VITE_FIREBASE_STORAGE_BUCKET=tu_storage_bucket\
+  VITE_FIREBASE_MESSAGING_SENDER_ID=tu_sender_id\
+  VITE_FIREBASE_APP_ID=tu_app_id
+
+Donde cada variable de entorno corresponde a las credenciales de tu Firestore Database.
+
+### Nota: 
+- Los valores no deben ir en comillas.
 
 # Features.
 
