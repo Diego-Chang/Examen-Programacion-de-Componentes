@@ -3,10 +3,12 @@ import axios from 'axios'
 import { firestore } from '../../Firebase/firebaseConfig'
 import SimpleReactValidator from 'simple-react-validator'
 import CurrencyFormat from 'react-currency-format'
+import { Link } from 'react-router-dom'
 
 //Form for adding products to the database.
 function ProductForm() {
   const [product, setProduct] = useState({ name: '', description: '', price: 0, stock: 0 })
+  const [submitted, setSubmitted] = useState(false)
   const [, forceUpdate] = useState(0);
 
   //Form validators.
@@ -63,6 +65,7 @@ function ProductForm() {
 
       //Posts product in database.
       await firestore.collection('products').add(newProduct)
+      setSubmitted(true)
 
       //Clears inputs and hides validation messages.
       validator.current.hideMessages()
@@ -116,7 +119,10 @@ function ProductForm() {
                 {validator.current.message('stock', product.stock, 'required|minVal')}
               </div>
             </div>
-            <button className="btn btn-dark" type="submit">Agregar Proyecto</button>
+            <button className="btn btn-dark" type="submit">Agregar Producto</button>
+            {submitted && (
+              <p className="mt-4">¡Producto añadido satisfactoriamente! Puede revisarlo en nuestra <Link to="/productList">Tienda</Link></p>
+            )}
           </form>
         </div>
       </div>
