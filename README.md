@@ -29,12 +29,12 @@ Este proyecto consiste en una aplicación que simula una tienda online donde el 
 
 # Uso.
 
-## 1.- Webapp (Desarrollador).
+1.- Webapp (Desarrollador).
 
-- Correr "npm run dev" para inicio de aplicación en navegador como desarrollador.
-- Abrir navegador en la URL indicada en el terminal.
+- Correr `npm run dev` en terminal para inicio de aplicación en navegador como desarrollador.
+- Abrir el navegador en la URL indicada en el terminal.
 
-## 2.- Aplicación movil Android.
+2.- Aplicación movil Android.
 
 - Correr comando `npm run build` en el proyecto.
 - Crear carpeta "cordova" dentro del proyecto.
@@ -45,11 +45,11 @@ Este proyecto consiste en una aplicación que simula una tienda online donde el 
 
 Estos pasos crearan una APK de pruebas en la ruta "<proyecto>/cordova/platform/android/app/build/outputs/apk/debug/" con el nombre "app-debug.apk" para su uso, ya sea mediante USB debugging o emulador.
 
-### Notas: 
+Notas: 
 - Se requiere un JDK mayor o igual a la version 11 instalada en el sistema.
 - Se recomienda correr `cordova platform rm Android` antes de `cordova platform add Android` por si se dan problemas con este paso.
 
-## 3.- Webapp en Netlify.
+3.- Webapp en Netlify.
 
 - Desplegar el proyecto en Netlify.
 - En comparación a los otros 2 metodos que requieren copiar y pegar las credenciales en firebaseConfig.jsx, con Netlify usaremos un archivo .env con la siguiente estructura:
@@ -63,8 +63,9 @@ Estos pasos crearan una APK de pruebas en la ruta "<proyecto>/cordova/platform/a
 
 Donde cada variable de entorno corresponde a las credenciales de tu Firestore Database.
 
-### Nota: 
-- Los valores no deben ir en comillas.
+Notas: 
+- Los valores no deben ir en comillas en el .env.
+- No se debe editar firebaseConfig.jsx si se desea desplegar el proyecto en Netlify.
 
 # Features.
 
